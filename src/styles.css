@@ -1,0 +1,332 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system — Enterprise EdTech, blue & white.
+ * Royal blue primary, deep navy ink, light ice-blue surfaces.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  /* Extended brand tokens */
+  --color-navy: var(--navy);
+  --color-navy-deep: var(--navy-deep);
+  --color-royal: var(--royal);
+  --color-royal-deep: var(--royal-deep);
+  --color-sky: var(--sky);
+  --color-ice: var(--ice);
+  --color-mist: var(--mist);
+  --color-success: var(--success);
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+ :root {
+  --radius: 0.9rem;
+
+  /* CampusStack dark futuristic system */
+  --background: #03141C;
+  --foreground: #F3FBFF;
+  --card: #08212B;
+  --card-foreground: #F3FBFF;
+  --popover: #0B2934;
+  --popover-foreground: #F3FBFF;
+  --primary: #27E0D0;
+  --primary-foreground: #F3FBFF;
+  --secondary: #0B2934;
+  --secondary-foreground: #D9F7FA;
+  --muted: #0B2934;
+  --muted-foreground: #8EAAB5;
+  --accent: #0D3440;
+  --accent-foreground: #D9F7FA;
+  --destructive: #FB7185;
+  --destructive-foreground: #fff;
+  --border: rgba(70, 220, 220, 0.20);
+  --input: rgba(70, 220, 220, 0.24);
+  --ring: #27E0D0;
+  --chart-1: #27E0D0;
+  --chart-2: #4B9CFF;
+  --chart-3: #78E08F;
+  --chart-4: #8B7CFF;
+  --chart-5: #19B7C5;
+
+  --navy: #08212B;
+  --navy-deep: #03141C;
+  --royal: #4B9CFF;
+  --royal-deep: #2B78D4;
+  --sky: #65C7FF;
+  --ice: #061A22;
+  --mist: #8EAAB5;
+  --success: #78E08F;
+}
+
+.dark {
+  --background: #03141C;
+  --foreground: #F3FBFF;
+  --card: #08212B;
+  --card-foreground: #F3FBFF;
+  --popover: #0B2934;
+  --popover-foreground: #F3FBFF;
+  --primary: #27E0D0;
+  --primary-foreground: #F3FBFF;
+  --secondary: #0B2934;
+  --secondary-foreground: #D9F7FA;
+  --muted: #0B2934;
+  --muted-foreground: #8EAAB5;
+  --accent: #0D3440;
+  --accent-foreground: #D9F7FA;
+  --destructive: #FB7185;
+  --destructive-foreground: #fff;
+  --border: rgba(70, 220, 220, 0.20);
+  --input: rgba(70, 220, 220, 0.24);
+  --ring: #27E0D0;
+  --chart-1: #27E0D0;
+  --chart-2: #4B9CFF;
+  --chart-3: #78E08F;
+  --chart-4: #8B7CFF;
+  --chart-5: #19B7C5;
+  --navy: #08212B;
+  --navy-deep: #03141C;
+  --royal: #4B9CFF;
+  --royal-deep: #2B78D4;
+  --sky: #65C7FF;
+  --ice: #061A22;
+  --mist: #8EAAB5;
+  --success: #78E08F;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* ---------- Brand utilities ---------- */
+
+@utility font-display {
+  font-family: var(--font-display);
+}
+
+@utility dot-grid {
+  background-image: radial-gradient(circle, oklch(0.52 0.21 262 / 0.14) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+@utility dot-grid-light {
+  background-image: radial-gradient(circle, oklch(1 0 0 / 0.12) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+@utility hero-gradient {
+  background:
+    radial-gradient(ellipse 70% 55% at 78% 4%, rgba(39,224,208,.13), transparent 65%),
+    radial-gradient(ellipse 55% 45% at 8% 90%, rgba(75,156,255,.12), transparent 60%),
+    linear-gradient(180deg, #03141C, #061A22 70%, #03141C);
+}
+
+@utility navy-gradient {
+  background:
+    radial-gradient(ellipse 60% 50% at 80% 0%, rgba(39,224,208,.12), transparent 60%),
+    radial-gradient(ellipse 45% 45% at 12% 100%, rgba(75,156,255,.10), transparent 60%),
+    linear-gradient(160deg, #08212B, #03141C);
+}
+
+@utility card-shadow {
+  box-shadow: 0 12px 36px -18px rgba(0,0,0,.65), 0 0 24px -18px rgba(39,224,208,.45);
+}
+
+@utility card-shadow-lg {
+  box-shadow: 0 22px 70px -28px rgba(0,0,0,.78), 0 0 42px -26px rgba(39,224,208,.45);
+}
+
+@utility text-gradient-blue {
+  background: linear-gradient(120deg, #27E0D0, #4B9CFF);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ---------- Motion ---------- */
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.35;
+    transform: scale(0.8);
+  }
+}
+
+@keyframes sweep {
+  from {
+    transform: translateX(-120%);
+  }
+  to {
+    transform: translateX(320%);
+  }
+}
+
+@keyframes blink-caret {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes bar-grow {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@utility animate-rise {
+  animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+@utility animate-marquee {
+  animation: marquee 32s linear infinite;
+}
+
+@utility animate-pulse-dot {
+  animation: pulse-dot 1.8s ease-in-out infinite;
+}
+
+@utility animate-sweep {
+  animation: sweep 3.4s ease-in-out infinite;
+}
+
+@utility animate-blink {
+  animation: blink-caret 1s steps(1) infinite;
+}
+
+@utility animate-float-slow {
+  animation: float-slow 7s ease-in-out infinite;
+}
+
+/* Scroll reveal: hidden until in view */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+
+/* Futuristic UI polish */
+.glass-panel {
+  background: linear-gradient(135deg, rgba(11,41,52,.78), rgba(8,33,43,.58));
+  border: 1px solid rgba(70,220,220,.20);
+  box-shadow: 0 18px 55px -28px rgba(0,0,0,.75), 0 0 34px -28px rgba(39,224,208,.55);
+  backdrop-filter: blur(16px);
+}
+
+.section-grid {
+  background-image: linear-gradient(rgba(70,220,220,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(70,220,220,.045) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+::selection { background: rgba(39,224,208,.28); color: #F3FBFF; }
+
+/* Dark-section text legibility: keep headings/body copy bright on cinematic surfaces. */
+.dark-section-readable h2,
+.dark-section-readable h3 { color: #F3FBFF !important; }
+.dark-section-readable p { color: #C5D8DF !important; }
